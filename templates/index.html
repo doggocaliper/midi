@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <img src="https://github.com/doggocaliper/food/blob/main/download%20(4).png?raw=true" width="400" />
+  <br>
+  <img src="https://github.com/doggocaliper/food/blob/main/download%20(6).png?raw=true" width="300" />
+  <p><mark>but please do not upload link that is more than 5 mins long, am scared will crash and not enough storage space, thank you for uploading 🌈</mark></p>
+<p>scroll down for faq if got question</p>
+  <hr />
+  <img src="https://github.com/doggocaliper/food/blob/main/download%20(7).png?raw=true" width="400"/>
+  <form method="post">
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" required/><br>
+    <label for="song">Song name: </label>
+    <input type="text" id="song" name="song" required/><br>
+    <label for="link">Youtube link: </label>
+    <input type="text" id="link" name="link" required/>
+    <input type="submit" value="Add" />
+  </form>
+  <hr />
+  <img src="https://github.com/doggocaliper/food/blob/main/download%20(9).png?raw=true" width="300" height="88"/>
+  <table border="5px">
+      <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Song</th>
+          <th>Audio</th>
+      </tr>
+      {% for dat in data %}
+      <tr>
+          <td>{{ dat[0] }}</td>
+          <td>{{ dat[1] }}</td>
+          <td>{{ dat[2] }}</td>
+          <td>
+              <audio controls>
+                <source src="{{ url_for('get_file', filename=dat[4]) }}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+              </audio>
+          </td>
+      </tr>
+      {% endfor %}
+  </table>
+  <hr />
+  <img src="https://github.com/doggocaliper/food/blob/main/download%20(8).png?raw=true" width="270" height="88"/>
+  <h2>How to find Youtube link?</h2>
+    <ul>search for YouTube in your browser</ul>
+    <ul><img src="https://github.com/doggocaliper/food/blob/main/download.png?raw=true" width="300"></ul>
+    <ul>search for song that you want</ul>
+    <ul><img src="https://github.com/doggocaliper/food/blob/main/download%20(1).png?raw=true" width="300"></ul>
+    <ul>copy link at top to get youtube link</ul>
+    <ul><img src="https://github.com/doggocaliper/food/blob/main/download%20(2).png?raw=true" width="300"></ul>
+    <ul>or you can manually press 'share' to copy link from there</ul>
+    <ul><img src="https://github.com/doggocaliper/food/blob/main/download%20(3).png?raw=true" width="300"></ul>
+    <ul>tip: search specifically for 'audio version' to avoid unnecessary sounds</ul>
+  <h2>Why use downloads+ ?</h2>
+    <ul>- u don't have to pay to download music, which is pretty rare these days</ul>
+    <ul>- this is a safe site</ul>
+    <ul>- u share the joy of music with others</ul>
+<br>
+<br>
+<br>
+</body>
+</html>
